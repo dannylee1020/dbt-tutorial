@@ -7,3 +7,4 @@ select
     status
 -- from `dbt-sandbox-303803.dbt_tutorial.jaffle_shop_orders`
 from {{ source('bigquery_jaffle_shop', 'jaffle_shop_orders') }}
+-- {{ limit_data_in_dev('order_date', 'bigquery_jaffle_shop', 'jaffle_shop_orders') }}

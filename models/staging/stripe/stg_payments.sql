@@ -5,6 +5,7 @@ select
     orderid as order_id,
     paymentmethod as payment_method,
     status,
-    amount/100 as amount,
+    {{ to_dollars('amount') }} as amount,
     created as created_at
 from {{ source('stripe', 'payments')}}
+-- {{ limit_data_in_dev('CREATED', 'stripe', 'payments') }}
