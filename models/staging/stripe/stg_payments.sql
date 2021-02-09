@@ -7,4 +7,4 @@ select
     status,
     amount/100 as amount,
     created as created_at
-from `dbt-sandbox-303803.dbt_tutorial.payments`
+from {{ source('stripe', 'payments')}}
