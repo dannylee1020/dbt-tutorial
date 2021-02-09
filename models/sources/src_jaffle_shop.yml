@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+    - name: bigquery_jaffle_shop
+      database: dbt-sandbox-303803
+      schema: dbt_tutorial
+
+      tables:
+        - name: jaffle_shop_customers
+          description: Raw customers data.
+          columns:
+            - name: id
+              description: Primary key for customers
+              test: 
+                - unique
+                - not_null
+
+        - name: jaffle_shop_orders
+          description: Raw orders data.
+          columns:
+            - name: id
+              description: Primary key for orders
+              test:
+                - unique
+                - not_null 
+        
