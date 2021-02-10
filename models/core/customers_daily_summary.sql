@@ -8,3 +8,4 @@ select
   count(distinct order_id) as order_count 
 from {{ ref('stg_orders') }}
 group by 1,2,3
+    
