@@ -1,7 +1,7 @@
 ## generating date_spine model with dbt_utils package
 
 {{ config(
-    materialization: 'table'
+    materialized =  'table'
 )}}
 
 {{ dbt_utils.date_spine(
